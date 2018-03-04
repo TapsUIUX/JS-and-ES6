@@ -78,3 +78,77 @@ h_hand.style.transform = `rotate(${((360/12)*hr+90)}deg)`;
 setInterval(rotation,1000);
     
     </script>
+ //noCSS ver
+ var radius =  250 ;
+let clockFace = document.querySelector(".clock-face");
+let s_hand = document.querySelector("#s-hand");
+let m_hand = document.querySelector("#m-hand");
+let h_hand = document.querySelector("#h-hand");
+let in_cir = document.querySelector("#in-cir");
+let niddle = document.querySelector(".niddles");
+
+
+clockFace.style.width = radius * 2 ;
+clockFace.style.height = radius * 2 ;
+
+
+//middle circle
+// in_cir.style.left="0";
+// in_cir.style.top= radius/20;
+
+// in_cir.style.marginLeft= radius - radius/10 
+
+//niddles
+s_hand.style.width=radius;
+s_hand.style.backgroundColor="red";
+s_hand.style.height=2;
+s_hand.style.marginTop=s_hand.style.height/2;
+
+
+m_hand.style.width=radius-radius/10;
+m_hand.style.backgroundColor="black";
+m_hand.style.height=4;
+m_hand.style.marginTop=m_hand.style.height/2;
+m_hand.style.marginLeft=radius/10;
+
+
+h_hand.style.width=radius-radius/6;
+h_hand.style.backgroundColor="black";
+h_hand.style.height=5;
+h_hand.style.marginTop=h_hand.style.height/2;
+h_hand.style.marginLeft=radius/6;
+
+
+in_cir.style.height = radius/10;
+in_cir.style.width = radius/10
+in_cir.style.backgroundColor="red";
+
+in_cir.style.marginLeft= radius-radius/10+radius/20;
+in_cir.style.marginTop= -radius/20;
+
+
+
+
+niddle.style.marginTop = radius;
+
+
+
+
+
+
+
+ 
+function rotation(){
+var now = new Date();
+var sec = now.getSeconds();
+var min = now.getMinutes();
+var hr = now.getHours();
+s_hand.style.transform = `rotate(${((360/60)*sec+90)}deg)`;
+m_hand.style.transform = `rotate(${((360/60)*min+90)}deg)`;
+h_hand.style.transform = `rotate(${((360/12)*hr+90)}deg)`;
+ 
+}
+setInterval(rotation,1000);// Your code goes here
+
+
+
