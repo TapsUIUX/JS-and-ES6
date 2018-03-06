@@ -1,7 +1,10 @@
-fac.sanitizeObj = function (obj, value) {
+
+        //sanitize objects 
+        //ForEach does not break with return null. and forces the logic to be lengthy.
+        fac.sanitizeObj_OLD = function (obj, value) {
             var tempArray = value.split(".");
-            tempArray.shift()
-            var tempObj = {}
+            tempArray.shift();
+            var tempObj = {};
             // console.log("temp", tempArray);
             var val = null;
             tempArray.forEach(function(el, id, arr) {
@@ -38,3 +41,4 @@ fac.sanitizeObj = function (obj, value) {
 
             return val;
         }
+
