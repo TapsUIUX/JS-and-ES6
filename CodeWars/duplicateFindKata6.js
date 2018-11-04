@@ -8,3 +8,16 @@
 //"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
 //"aA11" -> 2 # 'a' and '1'
 //"ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function duplicateCount(text){
+  let temp = text.toLowerCase().split('').sort();
+  let count = 0;
+  let elem='';
+  text.toLowerCase().split('').sort().forEach((el,id)=>{ 
+   if(el===temp[id+1] && el!==elem) {
+     count++;
+     elem=el;
+   }    
+  }) 
+  return count ;
+} 
