@@ -26,3 +26,41 @@ function orderWeight(str){
 
    return final.join(' ');
 }
+
+
+//sol2
+function orderWeight(s) {
+  return s.split(' ').sort((a,b)=>a.split('').reduce((pv,cv)=>pv+ +cv,0)-b.split('').reduce((pv,cv)=>pv+ +cv,0)||(a>b?1:-1)).join(' ');
+}
+
+//sol3
+function orderWeight(strng) {
+  return strng.split(" ").sort(function f(a, b){ 
+    return eval(a.split("").join("+")) - eval(b.split("").join("+")) + ([a, b].sort()[1] == a ? 0.1 : -0.1);
+  }).join(" ");
+}
+
+
+
+//sol4
+function orderWeight(s) {
+  return s.split(' ').sort((a,b) => sum(a) - sum(b) || a.localeCompare(b)).join(' ');
+}
+function sum(s) { return s.split('').reduce((s,v) => s + +v, 0); }
+
+
+
+//sol5
+function orderWeight(strng) {
+    return strng.split(' ').sort(function(a, b) {
+        let v1 = Array.prototype.reduce.call(a, function(i, j) {return ~~i + ~~j})
+        let v2 = Array.prototype.reduce.call(b, function(i, j) {return ~~i + ~~j})
+        if (v1 > v2) return 1
+        if (v1 < v2) return -1
+        if (v1 == v2) {
+            if (a < b) return -1
+            if (a > b) return 1
+            return 0
+        }
+    }).join(' ')
+}
