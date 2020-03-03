@@ -1,0 +1,19 @@
+.bg-image{
+    background-image: url(/CONTEXT_NAME/public/assets/bcback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    z-index: -10;
+    position: absolute;
+    filter: grayscale(1);
+    animation-name: bg;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bg {
+  0%   {filter: grayscale(1);}
+  50%  {filter: grayscale(0);}
+  100% {filter: grayscale(1);}
+}
