@@ -1,0 +1,11 @@
+
+    select {
+    
+    background: url(static/resources/images/downArrow.png) no-repeat right;
+    background-size: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+     
+}
